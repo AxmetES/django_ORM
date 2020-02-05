@@ -7,9 +7,9 @@ django.setup()
 
 from datacenter.models import Passcard, Visit
 
-
 if __name__ == "__main__":
     # Программируем здесь
-    passcard = Passcard.objects.all()
-    print(passcard)
+    is_activ_cards = []
+    is_activ_cards = Passcard.objects.filter(is_active=True)
+    print('Активных пропусков:', len(is_activ_cards))
     print('Количество пропусков:', Passcard.objects.count())
